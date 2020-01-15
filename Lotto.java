@@ -8,9 +8,9 @@ public class Lotto {
         DataInputStream input = new DataInputStream(System.in);
         String replay = "";
         int check, winning_numbers, num1 = 5, num2 = 30, num3 = 500 , num4 = 100000, num5 = 1000000, num6 = 30000000;
-        int bank = 5, guess1, guess2 , guess3, guess4, guess5, guess6, hold;
+        int bank = 50, guess1, guess2 , guess3, guess4, guess5, guess6, hold;
         System.out.println("Welcome to the Lotto496");
-        System.out.println("You currently have $50 in your bank account\nOne try costs $5");
+        System.out.println("You currently have $"+bank+" in your bank account\nOne try costs $5");
         System.out.print("Enter any key to continue: ");
         String start = input.readLine();
         System.out.println("");
@@ -69,7 +69,7 @@ public class Lotto {
                 }
             }
 //Cheat
-            System.out.println(win1 + "\t" + win2 + "\t" + win3 + "\t" + win4 + "\t" + win5 + "\t" + win6);
+            //System.out.println(win1 + "\t" + win2 + "\t" + win3 + "\t" + win4 + "\t" + win5 + "\t" + win6);
 // User guesses
             System.out.println("Please enter your six numbers(No repeating numbers or numbers over 49 or under 1) ");
             System.out.print("First Number :  ");
@@ -181,6 +181,7 @@ public class Lotto {
             if (guess6 == win1 || guess6 == win2 || guess6 == win3 || guess6 == win4 || guess6 == win5 || guess6 == win6){
                 winning_numbers++;
             }
+            System.out.println("The winning numbers are " +win1  + "\t" + win2 + "\t" + win3 + "\t" + win4 + "\t" + win5 + "\t" + win6);
 //Giving the prizes
             if (winning_numbers == 6){
                 System.out.println("YOU WON THE JACKPOT!!!!!!\nYou have received $30,000,000 in your bank account.");

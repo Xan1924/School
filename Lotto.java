@@ -17,6 +17,7 @@ public class Lotto {
             String start = input.readLine();
             if (start.equalsIgnoreCase("y")) {
                     System.out.println("OK");
+                    
                     check2 = 1;
                     bank = bank - 5;
                     System.out.println("");
@@ -293,4 +294,3 @@ public class Lotto {
         	}	
         }
     }
-    

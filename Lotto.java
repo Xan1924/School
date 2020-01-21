@@ -5,7 +5,7 @@ import java.io.*;
 public class Lotto {
 
     @SuppressWarnings("deprecation")
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         DataInputStream input = new DataInputStream(System.in);
         String replay = "";
         int check, check2 = 0, check4 = 0, winning_numbers, num1 = 5, num2 = 30, num3 = 500 , num4 = 100000, num5 = 1000000, num6 = 30000000;
@@ -16,22 +16,22 @@ public class Lotto {
         while(check2 == 0) {
             String start = input.readLine();
             if (start.equalsIgnoreCase("y")) {
-                    System.out.println("OK");
-                    
-                    check2 = 1;
-                    bank = bank - 5;
-                    System.out.println("");
-                }
-             else if (start.equalsIgnoreCase("n")) {
+                System.out.println("OK");
+
+                check2 = 1;
+                bank = bank - 5;
+                System.out.println("");
+            }
+            else if (start.equalsIgnoreCase("n")) {
                 System.out.println("Very Well");
                 replay = "n";
                 check = 1;
             }
-        
-                else {
-                    System.out.print("Please only type 'y' for yes and 'n' for no: ");
-                }
-        	}
+
+            else {
+                System.out.print("Please only type 'y' for yes and 'n' for no: ");
+            }
+        }
 
 // Loop starts
         while (!replay.equalsIgnoreCase("n")) {
@@ -91,24 +91,24 @@ public class Lotto {
 // User guesses
             System.out.println("Please enter your six numbers(No repeating numbers or numbers over 49 or under 1) ");
             System.out.print("First Number :  ");
-             guess1 = Integer.parseInt(input.readLine());
+            guess1 = Integer.parseInt(input.readLine());
             while (guess1 < 1 || guess1 > 49){
                 System.out.print("NUMBERS 1-49 ONLY!! First Number:  ");
                 guess1 = Integer.parseInt(input.readLine());
             }
-             System.out.print("Second Number:  ");
-             guess2 = Integer.parseInt(input.readLine());
-             while (guess2 == guess1 || guess2 < 1 || guess2 > 49) {
-                 if (guess2 == guess1) {
-                     System.out.print("NO REPEATING NUMBERS!! Second Number:  ");
-                 }
-                 else{
-                     System.out.print("NUMBERS 1-49 ONLY!! Second Number:  ");
-                 }
-                 guess2 = Integer.parseInt(input.readLine());
-             }
+            System.out.print("Second Number:  ");
+            guess2 = Integer.parseInt(input.readLine());
+            while (guess2 == guess1 || guess2 < 1 || guess2 > 49) {
+                if (guess2 == guess1) {
+                    System.out.print("NO REPEATING NUMBERS!! Second Number:  ");
+                }
+                else{
+                    System.out.print("NUMBERS 1-49 ONLY!! Second Number:  ");
+                }
+                guess2 = Integer.parseInt(input.readLine());
+            }
             System.out.print("Third Number :  ");
-             guess3 = Integer.parseInt(input.readLine());
+            guess3 = Integer.parseInt(input.readLine());
             while (guess3 == guess2 || guess3 == guess1 || guess3 < 1 || guess3 > 49) {
                 if (guess3 == guess2 || guess3 == guess1) {
                     System.out.print("NO REPEATING NUMBERS!! Third Number:  ");
@@ -119,18 +119,18 @@ public class Lotto {
                 guess3 = Integer.parseInt(input.readLine());
             }
             System.out.print("Fourth Number:  ");
-             guess4 = Integer.parseInt(input.readLine());
+            guess4 = Integer.parseInt(input.readLine());
             while (guess4 == guess3 || guess4 == guess2 || guess4 == guess1 || guess4 < 1 || guess4 > 49) {
-               if (guess4 == guess3 || guess4 == guess2 || guess4 == guess1) {
-                   System.out.print("NO REPEATING NUMBERS!! Fourth Number:  ");
-               }
-               else{
-                   System.out.print("NUMBERS 1-49 ONLY!! Fourth Number:  ");
-               }
+                if (guess4 == guess3 || guess4 == guess2 || guess4 == guess1) {
+                    System.out.print("NO REPEATING NUMBERS!! Fourth Number:  ");
+                }
+                else{
+                    System.out.print("NUMBERS 1-49 ONLY!! Fourth Number:  ");
+                }
                 guess4 = Integer.parseInt(input.readLine());
             }
             System.out.print("Fifth Number :  ");
-             guess5 = Integer.parseInt(input.readLine());
+            guess5 = Integer.parseInt(input.readLine());
             while (guess5 == guess4 || guess5 == guess3 || guess5 == guess2 || guess5 == guess1 || guess5 < 1 || guess5 > 49) {
                 if  (guess5 == guess4 || guess5 == guess3 || guess5 == guess2 || guess5 == guess1) {
                     System.out.print("NO REPEATING NUMBERS!! Fifth Number:  ");
@@ -141,7 +141,7 @@ public class Lotto {
                 guess5 = Integer.parseInt(input.readLine());
             }
             System.out.print("Sixth Number :  ");
-             guess6 = Integer.parseInt(input.readLine());
+            guess6 = Integer.parseInt(input.readLine());
             while (guess6 == guess5 || guess6 == guess4 || guess6 == guess3 || guess6 == guess2 || guess6 == guess1 || guess6 < 1 || guess6 > 49) {
                 if (guess6 == guess5 || guess6 == guess4 || guess6 == guess3 || guess6 == guess2 || guess6 == guess1) {
                     System.out.print("NO REPEATING NUMBERS!! Sixth Number:  ");
@@ -232,65 +232,65 @@ public class Lotto {
             System.out.println("");
 //Play Again Prompt
             if (bank >= 5){
-           
-            System.out.print("Would you like to play again?(Y/N): ");
-            while(check == 0) {
-                String playresponse = input.readLine();
-                if (playresponse.equalsIgnoreCase("y")) {
-                    if (bank >= 5){
-                        System.out.println("OK");
-                        check = 1;
-                        bank = bank - 5;
-                    }
-                    else{
-                        System.out.println("You don't have enough money");
-                        check = 1;
-                        replay = "n";
-                        System.out.print("Please visit this website to stop gambling\nhttp://www.gamblersanonymous.org/ga/");
-                    }
-                } else if (playresponse.equalsIgnoreCase("n")) {
-                    System.out.println("Very Well");
-                    replay = "n";
-                    check = 1;
-                   System.out.print("Would you like to donate to charity? (Y/N)");
-                   int check3 = 0;
-                   while(check3 == 0) {
-                   String charity = input.readLine();
-          
-					if (charity.equalsIgnoreCase("y")) {
+
+                System.out.print("Would you like to play again?(Y/N): ");
+                while(check == 0) {
+                    String playresponse = input.readLine();
+                    if (playresponse.equalsIgnoreCase("y")) {
+                        if (bank >= 5){
                             System.out.println("OK");
-                            check3 = 1;
-                            System.out.print("Enter the amount of money to be donated(Bank = $"+bank+ "): ");
-                            while (check4 == 0){
-                            int donate = Integer.parseInt(input.readLine());
-                            if (donate <= bank) {
-                            	System.out.println("You have donated $"+donate+" to charity");
-                            	check4 = 1;
+                            check = 1;
+                            bank = bank - 5;
+                        }
+                        else{
+                            System.out.println("You don't have enough money");
+                            check = 1;
+                            replay = "n";
+                            System.out.print("Please visit this website to stop gambling\nhttp://www.gamblersanonymous.org/ga/");
+                        }
+                    } else if (playresponse.equalsIgnoreCase("n")) {
+                        System.out.println("Very Well");
+                        replay = "n";
+                        check = 1;
+                        System.out.print("Would you like to donate to charity? (Y/N)");
+                        int check3 = 0;
+                        while(check3 == 0) {
+                            String charity = input.readLine();
+
+                            if (charity.equalsIgnoreCase("y")) {
+                                System.out.println("OK");
+                                check3 = 1;
+                                System.out.print("Enter the amount of money to be donated(Bank = $"+bank+ "): ");
+                                while (check4 == 0){
+                                    int donate = Integer.parseInt(input.readLine());
+                                    if (donate <= bank) {
+                                        System.out.println("You have donated $"+donate+" to charity");
+                                        check4 = 1;
+                                    }
+                                    else {
+                                        System.out.println("You can't donate that amount of money\t enter a new amount(Bank = $\"+bank+ \"): ");
+
+                                    }
+
+                                }
+                            }
+                            else if (charity.equalsIgnoreCase("n")) {
+                                System.out.println("Very Well");
+                                check3 = 1;
                             }
                             else {
-                            	System.out.println("You can't donate that amount of money ");
-                            	
+                                System.out.print("Please only type 'y' for yes and 'n' for no: ");
                             }
-                           
                         }
-					}
-					else if (charity.equalsIgnoreCase("n")) {
-                        System.out.println("Very Well");
-                        check3 = 1;
-					}
-                    else {
-                        System.out.print("Please only type 'y' for yes and 'n' for no: ");
-                    	}
-                   }
-                }
-            	}
-            }
-                    else{
-                        System.out.println("You don't have enough money to continue playing");
-                        check = 1;
-                        replay = "n";
-                        System.out.print("Please visit this website to stop gambling\nhttp://www.gamblersanonymous.org/ga/");
                     }
-        	}	
+                }
+            }
+            else{
+                System.out.println("You don't have enough money to continue playing");
+                check = 1;
+                replay = "n";
+                System.out.print("Please visit this website to stop gambling\nhttp://www.gamblersanonymous.org/ga/");
+            }
         }
     }
+}
